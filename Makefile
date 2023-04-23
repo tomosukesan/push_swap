@@ -6,7 +6,7 @@
 #    By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 21:06:16 by ttachi            #+#    #+#              #
-#    Updated: 2023/03/25 11:35:12 by ttachi           ###   ########.fr        #
+#    Updated: 2023/04/23 11:07:00 by ttachi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,32 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-#SRCS
+SRCS = 	push_swap.c \
+		push_swap_utils.c \
+		make_circular_list.c \
+		conv_num_list.c \
+		ft_strtol.c \
+		list_utils.c
 OBJS = $(SRCS:.c=.o)
+
+LIB = libft/libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar r $(NAME) $(OBJS)
+	$(MAKE) -C libft
+	$(CC) $(CFLAGS) -o $(NAME) main.c $(SRCS) $(LIB)
 
 bonus:
 	make -C bonus
 
+debug: $(OBJS)
+	$(MAKE) -C libft
+	cc $(CFLAGS) -g -o $(NAME) main.c $(SRCS) $(LIB)
+#clang -g -fsanitize=address,leak -o $(NAME) main.c $(SRCS) $(LIB)
+
 clean:
+#$(MAKE) clean -C libft
 	$(RM) $(OBJS)
 
 fclean: clean
