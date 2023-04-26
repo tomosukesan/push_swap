@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+        */
+/*   By: ttachi <ttachi@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 13:41:46 by ttachi            #+#    #+#             */
-/*   Updated: 2023/04/26 07:30:22 by ttachi           ###   ########.fr       */
+/*   Updated: 2023/04/26 15:44:12 by ttachi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,13 @@ void		ft_strlst_clear(t_cmd_lst **lst);
 void		execute_cmd(t_list **a_stack, size_t elements, t_cmd_lst **commands);
 void		each_process(t_list **a_stack, size_t elements, t_cmd_lst **commands);
 void		swap(t_list **stack, t_cmd_lst **commands, char *cmd);
-void		swap_swap(t_list **a_stack, t_list b_stack, t_cmd_lst **commands);
+void		both_swap(t_list **a_stack, t_list b_stack, t_cmd_lst **commands);
 void		push(t_list **dst, t_list **src, t_cmd_lst **commands, char *cmd);
+void		rotate(t_list **stack, t_cmd_lst **commands, char *cmd);
+void		both_rotate(t_list **a_stk, t_list **b_stk, t_cmd_lst **cmd);
+void		both_reverse_rotate(t_list **a_stk, t_list **b_stk, t_cmd_lst **cmd);
+
+
 
 //size_t	check_listed_num(t_list **data);
 

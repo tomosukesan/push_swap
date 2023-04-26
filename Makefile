@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+         #
+#    By: ttachi <ttachi@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 21:06:16 by ttachi            #+#    #+#              #
-#    Updated: 2023/04/25 16:30:45 by ttachi           ###   ########.fr        #
+#    Updated: 2023/04/26 15:24:54 by ttachi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = 	push_swap.c \
 		list_str_utils.c \
 		execute_cmd.c \
 		each_process.c \
-		cmd_swap.c
+		cmd_swap_push.c
 OBJS = $(SRCS:.c=.o)
 
 LIB = libft/libft.a
