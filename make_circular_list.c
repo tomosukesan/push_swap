@@ -6,15 +6,15 @@
 /*   By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 09:23:39 by ttachi            #+#    #+#             */
-/*   Updated: 2023/04/23 11:26:27 by ttachi           ###   ########.fr       */
+/*   Updated: 2023/04/24 18:42:12 by ttachi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static unsigned int	cnt_elements(char *argv[], bool argv_flag)
+static size_t	cnt_elements(char *argv[], bool argv_flag)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (argv[i] != NULL)
@@ -24,10 +24,10 @@ static unsigned int	cnt_elements(char *argv[], bool argv_flag)
 	return (i);
 }
 
-static char	**check_argv(char *argv[], unsigned int *elements, bool *split_flag)
+static char	**check_argv(char *argv[], size_t *elements, bool *split_flag)
 {
-	char			**strs;
-	unsigned int	split_elements;
+	char	**strs;
+	size_t	split_elements;
 
 	strs = NULL;
 	split_elements = 0;
@@ -51,27 +51,26 @@ static char	**check_argv(char *argv[], unsigned int *elements, bool *split_flag)
 	return (strs);
 }
 
-t_list	*make_circular_list(char *argv[])
+t_list	*make_circular_list(char *argv[], size_t *elements)
 {
-	unsigned int	elements;
-	bool			split_flag;
-	char			**strs;
-	t_list			*circular_list;
+	bool	split_flag;
+	char	**strs;
+	t_list	*circular_list;
 
-	elements = cnt_elements(argv, true);
+	*elements = cnt_elements(argv, true);
 	split_flag = false;
-	if (elements < 1)
+	if (*elements < 1)
 		exit(0);
-	else if (elements == 1)
-		strs = check_argv(argv, &elements, &split_flag);
+	else if (*elements == 1)
+		strs = check_argv(argv, elements, &split_flag);
 	else
 		strs = ++argv;
-	circular_list = conv_num_list(elements, strs);
+	circular_list = conv_num_list(*elements, strs);
 	if (circular_list == NULL)
 	{
 		if (split_flag == true)
 			ft_free(strs);
-		exit(1);
+		ft_error();
 	}
 	return (circular_list);
 }

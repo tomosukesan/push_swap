@@ -6,15 +6,15 @@
 /*   By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 14:15:15 by ttachi            #+#    #+#             */
-/*   Updated: 2023/04/19 18:21:02 by ttachi           ###   ########.fr       */
+/*   Updated: 2023/04/23 14:00:37 by ttachi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static unsigned int	ft_isspace(char *str)
+static size_t	ft_isspace(char *str)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || \
@@ -32,7 +32,7 @@ static char	judge_sign(char sign)
 	return (sign);
 }
 
-static long	check_intmin(char *str, unsigned int i, long result)
+static long	check_intmin(char *str, size_t i, long result)
 {
 	if (result == INT_MIN && str[++i] == '\0')
 		return (INT_MIN);
@@ -41,9 +41,9 @@ static long	check_intmin(char *str, unsigned int i, long result)
 
 long	ft_strtol(char *str)
 {
-	unsigned int	i;
-	char			sign;
-	long			result;
+	size_t	i;
+	char	sign;
+	long	result;
 
 	i = ft_isspace(str);
 	sign = 1;

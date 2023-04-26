@@ -6,7 +6,7 @@
 #    By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 21:06:16 by ttachi            #+#    #+#              #
-#    Updated: 2023/04/23 11:07:00 by ttachi           ###   ########.fr        #
+#    Updated: 2023/04/25 16:30:45 by ttachi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,11 @@ SRCS = 	push_swap.c \
 		make_circular_list.c \
 		conv_num_list.c \
 		ft_strtol.c \
-		list_utils.c
+		list_num_utils.c \
+		list_str_utils.c \
+		execute_cmd.c \
+		each_process.c \
+		cmd_swap.c
 OBJS = $(SRCS:.c=.o)
 
 LIB = libft/libft.a

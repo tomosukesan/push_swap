@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   list_num_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 10:29:59 by ttachi            #+#    #+#             */
-/*   Updated: 2023/04/21 21:11:42 by ttachi           ###   ########.fr       */
+/*   Updated: 2023/04/25 14:05:07 by ttachi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstnew(int num, int rank)
+t_list	*ft_numlst_new(int num, int rank)
 {
 	t_list	*node;
 
@@ -26,7 +26,7 @@ t_list	*ft_lstnew(int num, int rank)
 	return (node);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_numlst_addback(t_list **lst, t_list *new)
 {
 	if ((*lst)->prev == NULL && (*lst)->next == NULL)
 	{
@@ -44,7 +44,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-t_list	*ft_lstclear(t_list **lst)
+t_list	*ft_numlst_clear(t_list **lst)
 {
 	t_list	*next_node;
 	t_list	*target;
